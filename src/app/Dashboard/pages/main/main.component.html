@@ -1,0 +1,46 @@
+<div class="container animate__animated animate__fadeIn animate__faster">
+  <h3 class="mt-4 font-weight-bold">Menu</h3>
+  <h6 class="text-secondary">Automatically save</h6>
+  <div class="row mt-rem-2 mb-4">
+    <div class="col-4 text-center mt-4">
+      <a href="#" routerLink="/dashboard/groups" class="btn rounded-circle btn-secondary p-3">
+        <i class="far fa-folder fa-2x"></i>
+      </a>
+      <span class="text-secondary mt-2">Groups</span>
+    </div>
+    <div class="col-4 text-center mt-4">
+      <a href="#" routerLink="/dashboard/important" class="btn rounded-circle btn-danger p-3">
+        <i class="far fa-star fa-2x"></i>
+      </a>
+      <span class="text-secondary mt-2">Important</span>
+    </div>
+    <div class="col-4 text-center mt-4">
+      <a href="#" class="btn rounded-circle btn-dark p-3">
+        <i class="fas fa-share-alt fa-2x"></i>
+      </a>
+      <span class="text-muted mt-2 text-t" style="text-decoration: line-through;">Share</span>
+    </div>
+    <div class="col-4 text-center mt-4">
+      <a href="#" routerLink="/dashboard/hidden" class="btn rounded-circle btn-success p-3">
+        <i class="far fa-eye-slash fa-2x"></i>
+      </a>
+      <span class="text-secondary mt-2">Hidden lists</span>
+    </div>
+    <div class="col-4 text-center mt-4">
+      <a href="#" routerLink="/dashboard/settings" class="btn rounded-circle btn-secondary p-3">
+        <i class="fa fa-cog fa-2x"></i>
+      </a>
+      <span class="text-secondary mt-2">Settings</span>
+    </div>
+    <div class="col-4 text-center mt-4">
+      <a
+        href="#"
+        class="btn rounded-circle btn-secondary p-3"
+        (click)="signout($event)"
+      >
+        <i class="fas fa-sign-out-alt fa-2x"></i>
+      </a>
+      <span class="text-secondary mt-2">Exit</span>
+    </div>
+  </div>
+</div>

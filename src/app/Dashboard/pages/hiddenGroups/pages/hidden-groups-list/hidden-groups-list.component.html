@@ -1,0 +1,29 @@
+<div class="container mt-3 animate__animated animate__fadeIn animate__faster position-relative h-100">
+  <app-navbar-controls
+    [editMode]="editMode"
+    [goBackRoute]="'/dashboard/main'"
+    [topLeftTitle]="'Menu'"
+    [showEditMode]="true"
+    (handleEditMode)="handleEditLists($event)"
+  >
+  </app-navbar-controls>
+  <h3 class="mt-4 font-weight-bold">Archived groups</h3>
+  <h6 class="text-secondary">All your hidden groups</h6>
+  <app-filter-groups-form
+    [filterFg]="filterFg"
+    (formSubmitted)="handleListsFilter()"
+  >
+  </app-filter-groups-form>
+  <app-selectable-group-list
+    [canNavigate]="false"
+    [editMode]="editMode"
+    [toDoLists]="toDoLists"
+  >
+  </app-selectable-group-list>
+  <app-footer-controls
+    [bottomRightOptionTxt]="'Unarchive'"
+    [editMode]="editMode"
+    (execAction)="handleUnarchiveElems()"
+  >
+  </app-footer-controls>
+</div>

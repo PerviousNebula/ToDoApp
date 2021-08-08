@@ -1,0 +1,45 @@
+<form [formGroup]="signinFg" (ngSubmit)="submitForm()" novalidate>
+  <div class="form-group">
+    <input
+      formControlName="email"
+      class="form-control shadow-sm"
+      type="email"
+      placeholder="Email"
+      autocomplete="off"
+    />
+    <small
+      *ngIf="signinFg.controls.email.errors?.required && signinFg.controls.email.touched"
+      class="form-text text-danger"
+    >
+      This field is required
+    </small>
+    <small
+      *ngIf="signinFg.controls.email.errors?.email && signinFg.controls.email.touched"
+      class="form-text text-danger"
+    >
+      Invalid email address format
+    </small>
+  </div>
+  <div class="form-group mt-4">
+    <input
+      class="form-control shadow-sm"
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+      autocomplete="off"
+    />
+    <small
+      *ngIf="signinFg.controls.password.errors?.required && signinFg.controls.password.touched"
+      class="form-text text-danger"
+    >
+      This field is required
+    </small>
+  </div>
+  <button
+    class="btn btn-primary w-100 p-3 mt-4"
+    type="submit"
+    [disabled]="signinFg.invalid || isLoading"
+  >
+    {{ !isLoading ? 'Sign in' : 'Loading...' }}
+  </button>
+</form>

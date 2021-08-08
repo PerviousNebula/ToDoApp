@@ -1,0 +1,49 @@
+<div class="container mb-4 animate__animated animate__fadeIn animate__faster">
+  <div class="row mt-4">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="card p-4 shadow-lg rounded">
+        <a href="#" routerLink="/login/signin">
+          <i class="fa fa-chevron-left"></i>
+        </a>
+        <img
+          class="img-center w-50 mb-4"
+          src="../../../../assets/img/logo.png"
+          alt="logo"
+        />
+        <h5 class="mb-4 font-weight-bold">Create your account</h5>
+        <app-signup-form
+          [signupFg]="signupFg"
+          (formSubmitted)="signup()"
+        >
+        </app-signup-form>
+        <span class="text-center text-secondary mt-5">
+          - Or sign up with -
+        </span>
+        <div class="row mt-4">
+          <div class="offset-2 col-4 bg-blue text-center">
+            <div class="card p-2 shadow-sm">
+              <a href="#" (click)="signupWithGoogle($event)">
+                <img
+                  class="social-logo img-center"
+                  src="assets/img/google.png"
+                  alt="google"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-4 bg-blue text-center">
+            <div class="card p-2 shadow-sm">
+              <a href="#" (click)="signupWithFacebook($event)">
+                <img
+                  class="social-logo img-center"
+                  src="assets/img/facebook.png"
+                  alt="facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

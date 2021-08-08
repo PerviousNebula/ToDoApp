@@ -1,0 +1,66 @@
+<div class="card rounded shadow">
+  <div class="card-body">
+    <div class="card-title position-relative mb-0">
+      <div
+        class="text-white font-weight-600 text-center w-65 fs-8 p-1 rounded position-absolute badge-pos"
+        [ngClass]="badgeColor"
+      >
+        {{ badgeTxt }}
+      </div>
+      <i
+        class="fas fa-plus-circle w-100 text-end text-secondary cursor-pointer"
+        (click)="addToDoItem({})"
+      >
+      </i>
+    </div>
+    <div
+      class="list-group"
+      [ngClass]="{'list-group-empty': !toDoItemsFAry.value.length}"
+      cdkDropList
+      cdkDropListSortingDisabled
+      [cdkDropListData]="toDoList.toDos || []"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <ng-container *ngIf="toDoItemsFAry.value.length; else noRecords">
+        <form [formGroup]="toDoItemsFg">
+          <div formArrayName="items">
+            <div
+              *ngFor="let toDo of getFAryControls(); let i = index"
+              class="list-group-item border-0 pt-1 cursor-pointer"
+              cdkDrag
+            >
+              <div [formGroupName]="i">
+                <div class="row">
+                  <div class="col-1 m-0 p-0 text-center position-relative">
+                    <a href="#" (click)="removeToDo($event, i)">
+                      <i class="fa fa-trash me-2 text-danger position-absolute bottom-0 mb-2"></i>
+                    </a>
+                  </div>
+                  <div class="col-10">
+                    <input
+                      #toDoInput
+                      class="form-control d-inline"
+                      type="text"
+                      formControlName="title"
+                      (blur)="handleToDoItemChange(toDoInput.value, i)"
+                    />
+                  </div>
+                  <div
+                    *ngIf="toDoInput.value"
+                    class="col-1 m-0 p-0 text-center position-relative"
+                    cdkDragHandle
+                  >
+                    <i class="fa fa-grip-vertical text-secondary position-absolute bottom-0 mb-1"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+      <ng-template #noRecords>
+        <h6 class="text-center pt-3">Drag and drop your items here...</h6>
+      </ng-template>
+    </div>
+  </div>
+</div>

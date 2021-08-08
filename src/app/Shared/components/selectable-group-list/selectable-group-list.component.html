@@ -1,0 +1,31 @@
+<ul class="list-group mt-4">
+  <ng-container *ngIf="toDoLists.length; else noRecords">
+    <li
+      *ngFor="let tl of toDoLists"
+      class="list-group-item"
+      [ngClass]="{'li-edit': editMode}"
+      (click)="handleClickList($event, tl)"
+    >
+      <i *ngIf="!editMode && canNavigate" class="fa fa-chevron-right float-end"></i>
+      <input
+        #todoGroupCheckbox
+        *ngIf="editMode"
+        class="me-2"
+        type="checkbox"
+        (change)="checkPristineCheckboxes(tl, todoGroupCheckbox.checked)"
+      />
+      {{ tl.name }}
+      <a
+        *ngIf="canEdit && editMode"
+        href="#"
+        class="float-end text-dark"
+        (click)="handleEditList($event, tl)"
+      >
+        <i class="fas fa-pencil-alt"></i>
+      </a>
+    </li>
+  </ng-container>
+  <ng-template #noRecords>
+    <app-no-records></app-no-records>
+  </ng-template>
+</ul>

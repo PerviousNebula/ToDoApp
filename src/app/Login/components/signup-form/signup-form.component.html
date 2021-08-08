@@ -1,0 +1,64 @@
+<form [formGroup]="signupFg" (ngSubmit)="submitForm()" novalidate>
+  <div class="form-group">
+    <input
+      class="form-control shadow-sm"
+      formControlName="email"
+      type="email"
+      placeholder="Email"
+      autocomplete="off"
+    />
+    <small
+      *ngIf="signupFg.controls.email.errors?.required && signupFg.controls.email.touched"
+      class="form-text text-danger"
+    >
+      This field is required
+    </small>
+    <small
+      *ngIf="signupFg.controls.email.errors?.email && signupFg.controls.email.touched"
+      class="form-text text-danger"
+    >
+      Invalid email address format
+    </small>
+  </div>
+  <div class="form-group mt-4">
+    <input
+      class="form-control shadow-sm"
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+    />
+    <small
+      *ngIf="signupFg.controls.password.errors?.required && signupFg.controls.password.touched"
+      class="form-text text-danger"
+    >
+      This field is required
+    </small>
+  </div>
+  <div class="form-group mt-4">
+    <input
+      class="form-control shadow-sm"
+      formControlName="confirmPassword"
+      type="password"
+      placeholder="Confirm Password"
+    />
+    <small
+      *ngIf="signupFg.controls.confirmPassword.errors?.required && signupFg.controls.confirmPassword.touched"
+      class="form-text text-danger"
+    >
+      This field is required
+    </small>
+    <small
+      *ngIf="signupFg.errors?.mismatch && signupFg.controls.confirmPassword.touched && signupFg.controls.confirmPassword.dirty"
+      class="form-text text-danger"
+    >
+      Passwords don't match
+    </small>
+  </div>
+  <button
+    class="btn btn-primary w-100 p-3 mt-4"
+    type="submit"
+    [disabled]="signupFg.invalid || isLoading"
+  >
+    {{ !isLoading ? 'Sign up' : 'Loading...' }}
+  </button>
+</form>

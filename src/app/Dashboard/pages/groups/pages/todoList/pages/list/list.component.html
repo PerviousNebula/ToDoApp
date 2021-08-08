@@ -1,0 +1,42 @@
+<div class="container mt-3 animate__animated animate__fadeIn animate__faster">
+  <app-navbar-controls
+    [goBackRoute]="'/dashboard/groups'"
+    [topLeftTitle]="'Groups'"
+    [showEditMode]="false"
+  >
+  </app-navbar-controls>
+  <ng-container *ngIf="!isLoading; else loading">
+    <h3 class="mt-4 font-weight-bold mb-3rem">
+      {{ toDoList.name }}
+    </h3>
+    <div class="row mt-4">
+      <div cdkDropListGroup class="col-md-12 mb-3rem">
+        <app-list-card
+          [badgeColor]="'bg-danger'"
+          [cardStatus]="0"
+          [badgeTxt]="'TO DO'"
+        >
+        </app-list-card>
+        <div class="mt-5">
+          <app-list-card
+            [badgeColor]="'bg-warning'"
+            [cardStatus]="1"
+            [badgeTxt]="'DOING'"
+          >
+          </app-list-card>
+        </div>
+        <div class="mt-5">
+          <app-list-card
+            [badgeColor]="'bg-success'"
+            [cardStatus]="2"
+            [badgeTxt]="'DONE'"
+          >
+          </app-list-card>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <app-loading-spinner></app-loading-spinner>
+  </ng-template>
+</div>

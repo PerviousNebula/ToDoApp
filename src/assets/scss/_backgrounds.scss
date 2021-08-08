@@ -1,0 +1,13 @@
+@import './variables';
+
+.bg-danger {
+    background-color: $danger-color !important;
+}
+
+.bg-success {
+    background-color: $success-color !important;
+}
+
+.bg-warning {
+    background-color: $warning-color !important;
+}

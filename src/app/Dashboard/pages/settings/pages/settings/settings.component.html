@@ -1,0 +1,55 @@
+<div class="gradient"></div>
+<app-navbar-controls
+  class="navbar-controls"
+  [goBackRoute]="'/dashboard/main'"
+  [topLeftTitle]="'Menu'"
+  [showEditMode]="false"
+  >
+  </app-navbar-controls>
+<div class="row position-absolute w-100 animate__animated animate__fadeIn animate__faster" style="top: 20%">
+  <div class="offset-1 col-10">
+    <div class="card shadow">
+      <div *ngIf="user$ | async as resp" class="card-body">
+        <ng-container *ngIf="!resp.loading; else isLoading">
+          <div class="position-relative text-center w-100" style="height: 50px;">
+            <div class="bg-secondary profile-picture profile-picture-text text-center">
+              <h1 class="text-white mt-4">
+                {{ resp.user.firstName && resp.user.lastName && (resp.user.firstName[0] + resp.user.lastName[0]) }}
+              </h1>
+            </div>
+          </div>
+          <h5 class="card-title text-center">{{ resp.user.firstName }} {{ resp.user.lastName }}</h5>  
+          <h6 class="card-subtitle mb-2 text-muted text-center">
+            Last seen: {{ resp.user.updatedAt | date }}
+          </h6>
+          <div class="icons-section row mt-4">
+            <div class="col-4 text-center text-secondary">
+              <i class="fa fa-calendar-alt"></i>
+              <span class="d-block">{{ resp.user.createdAt | date }}</span>
+            </div>
+            <div class="col-4 text-center text-secondary">
+              <i class="fa fa-envelope"></i>
+              <span class="d-block">{{ resp.user.email }}</span>
+            </div>
+            <div class="col-4 text-center text-secondary">
+              <i class="fa fa-key"></i>
+              <span class="d-block">******</span>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #isLoading>
+          <app-loading-spinner></app-loading-spinner>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row position-absolute w-100 animate__animated animate__fadeIn animate__faster pb-4">
+  <div class="offset-1 col-10 profile-card ">
+    <div class="card shadow">
+      <div class="card-body">
+        <app-user-profile-form></app-user-profile-form>
+      </div>
+    </div>
+  </div>
+</div>

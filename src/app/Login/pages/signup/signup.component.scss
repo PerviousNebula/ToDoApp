@@ -1,0 +1,23 @@
+@import '../../../../assets/scss/variables.scss';
+
+.col-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.mt-5 {
+    margin-top: 5.5rem;
+}
+
+.fa-arrow-left {
+    color: $primary-color;
+}
+
+.fa-2x {
+    font-size: 1.5rem;
+}
+
+.social-logo {
+    height: 25px !important;
+    width: 25px !important;
+}

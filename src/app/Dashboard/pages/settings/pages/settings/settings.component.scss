@@ -1,0 +1,66 @@
+.gradient {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    height: 30%;
+    position: relative;
+    width: 100%;
+}
+
+.icons-section {
+    border-top: 1px solid #dadada;
+    padding-top: 10px;
+}
+
+.icons-section > div:not(:last-child) {
+    border-right: 1px solid #dadada;
+}
+
+.navigation-controls {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+}
+
+.navbar-controls {
+    left: 10px;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
+
+.profile-picture {
+    height: 110px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    text-align: center;
+    top: -75px;
+    width: 110px;
+}
+
+.profile-picture-text {
+    border-radius: 50%;
+    position: absolute;
+    top: -75px;
+}
+
+.profile-picture-text > h1 {
+    font-size: 3rem;
+}
+
+.profile-card {
+    margin-top: 50%;
+    top: 0;
+}
+
+// Surface Duo 
+@media (max-width: 360px) { .profile-card { margin-top: 70%; } }
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { .profile-card { margin-top: 30%; } }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { .profile-card { margin-top: 25%; } }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { .profile-card { margin-top: 15%; } }
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { .profile-card { margin-top: 10%; } }

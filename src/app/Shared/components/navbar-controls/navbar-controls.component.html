@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-6">
+    <a class="mt-4" href="#" [routerLink]="goBackRoute">
+      <i class="fa fa-chevron-left"></i> {{ topLeftTitle }}
+    </a>
+  </div>
+  <div class="col-6 text-end">
+    <a
+      *ngIf="showEditMode"
+      href="#"
+      (click)="handleEdit($event)"
+    >
+      {{ !editMode ? 'Edit' : 'Done' }}
+    </a>
+  </div>
+</div>

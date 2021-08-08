@@ -1,0 +1,85 @@
+<ng-container *ngIf="!loading; else isLoading">
+  <form [formGroup]="userFg" (ngSubmit)="handleUpdate()">
+    <div class="mb-3">
+      <label for="firstNameInput" class="form-label">First name</label>
+      <input
+        type="text"
+        autocomplete="off"
+        class="form-control"
+        [ngClass]="{'is-invalid': userFg.controls.firstName.errors}"
+        id="firstNameInput"
+        formControlName="firstName"
+      />
+      <span
+        *ngIf="userFg.controls.firstName.errors?.required"
+        class="invalid-feedback d-block"
+      >
+        First name is required
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="lastNameInput" class="form-label">Last name</label>
+      <input
+        type="text"
+        autocomplete="off"
+        class="form-control"
+        [ngClass]="{'is-invalid': userFg.controls.lastName.errors}"
+        id="lastNameInput"
+        formControlName="lastName"
+      />
+      <span
+        *ngIf="userFg.controls.lastName.errors?.required"
+        class="invalid-feedback d-block"
+      >
+        Last name is required
+      </span>
+    </div>
+    <div *ngIf="!user.google && !user.facebook" class="mb-3">
+      <label for="emailInput" class="form-label">Email</label>
+      <input
+        type="email"
+        autocomplete="off"
+        class="form-control"
+        [ngClass]="{'is-invalid': userFg.controls.email.errors}"
+        id="emailInput"
+        formControlName="email"
+      />
+      <span
+        *ngIf="userFg.controls.email.errors?.required"
+        class="invalid-feedback d-block"
+      >
+        Email is required
+      </span>
+      <span
+        *ngIf="userFg.controls.email.errors?.email"
+        class="invalid-feedback d-block"
+      >
+        Invalid email address
+      </span>
+    </div>
+    <div *ngIf="!user.google && !user.facebook" class="mb-3">
+      <label for="passwordInput" class="form-label">Password</label>
+      <input
+        type="password"
+        autocomplete="off"
+        class="form-control"
+        id="passwordInput"
+        formControlName="password"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn w-100 mt-2 btn-primary"
+      [disabled]="userFg.invalid || loading"
+    >
+      {{ !loading ? 'Save' : 'Loading...' }}
+    </button>
+  </form>
+</ng-container>
+<ng-template #isLoading>
+  <div class="text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,28 @@
+<nav 
+  *ngIf="editMode"
+  class="navbar navbar-light navbar-position bg-light d-r position-absolute animate__animated animate__slideInUp animate__faster"
+>
+  <div class="container">
+    <a
+      *ngIf="!toDoListsSelected.length"
+      href="#"
+      (click)="handleCheckBulk($event, true)"
+    >
+      Check All
+    </a>
+    <a
+      *ngIf="toDoListsSelected.length"
+      href="#"
+      (click)="handleCheckBulk($event, false)"
+    >
+      Uncheck All
+    </a>
+    <a
+      *ngIf="toDoListsSelected.length"
+      href="#"
+      (click)="handleUpdateAction($event)"
+    >
+      {{ bottomRightOptionTxt }}
+    </a>
+  </div>
+</nav>

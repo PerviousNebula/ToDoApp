@@ -1,0 +1,17 @@
+<form [formGroup]="filterFg" (ngSubmit)="submitForm()">
+  <div class="input-group">
+    <input
+      #groupNameInput
+      formControlName="name"
+      type="text"
+      class="form-control border-end-0"
+      placeholder="Search"
+      (keyup)="submitForm()"
+    />
+    <span class="input-group-text bg-white border-start-0">
+      <a class="text-dark" href="#" (click)="clearInput($event)">
+        <i class="fa fa-times"></i>
+      </a>
+    </span>
+  </div>
+</form>

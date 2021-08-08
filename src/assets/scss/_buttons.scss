@@ -1,0 +1,57 @@
+@import './variables';
+
+.btn {
+    border-radius: .50rem;
+    font-size: .9rem;
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: $primary-color;
+    color: #fff;
+}
+
+.btn-primary:disabled {
+    background-color: $primary-color;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: $secondary-color;
+    border: none;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: $secondary-color;
+    border: none;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: $success-color;
+    border: none;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: $success-color;
+    border: none;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: $danger-color;
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: $danger-color;
+    border: none;
+    color: #fff;
+}
