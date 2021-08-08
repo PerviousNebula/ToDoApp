@@ -1,27 +1,44 @@
-# Todo
+# ToDoApp
+Simple ToDo App built on Angular, getting advantage of NgRx and RxJs libraries. Signin with Google, Facebook or your email address, create your ToDo lists, link your ToDo items, and more...
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+## Screenshots
+---
+### Login page
+Users can login using their method chosen to sign up. email address, Gmail or Facebook.
 
-## Development server
+![alt text](https://i.imgur.com/ssIpdxq.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Signup page
+Users can sign up using their email address or if they want, they can sign up using their Gmail account or Facebook account as well.
 
-## Code scaffolding
+![alt text](https://i.imgur.com/pJ819Iq.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Main page
+Shortcuts and log out button.
 
-## Build
+![alt text](https://i.imgur.com/uOgaPrP.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Groups page
+Here users can add/edit ToDo lists or select one and see their ToDo items.
 
-## Running unit tests
+![alt text](https://i.imgur.com/qXe25Hw.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Groups edit
+If users want to archive/unarchive/downplay ToDo lists, they just need to use the navbar controls, switch to edit mode and select all the elements. Finally, you just need to click on the bottom right button.
 
-## Running end-to-end tests
+![alt text](https://i.imgur.com/RuMzZeN.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### New Group
+This modal lets you add/edit ToDo lists, users can add new lists on the groups page.
 
-## Further help
+![alt text](https://i.imgur.com/HgepzXQ.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Groups items
+Here users can add/edit ToDo items or move them to any specific status, they just need to drag them to the area.
+
+![alt text](https://i.imgur.com/rpCbidH.png)
+
+### Settings page
+Here users can customize their profile information.
+
+![alt text](https://i.imgur.com/59EdTXG.png)
